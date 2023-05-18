@@ -79,7 +79,8 @@ The data should be formatted as a JSON object with separate fields for open and 
 
 This field should include the current state of the manufacturer's balance. **Note that ChatGPT should only be asked to assist with the decision regarding offers that can realistically be fulfilled**.
 ```json
-{"balance": int
+{
+"balance": 1
 }
 ```
 
