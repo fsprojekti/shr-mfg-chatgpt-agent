@@ -29,7 +29,7 @@ The data should be formatted as a simple JSON object:
 
 This field should include data about all the packages being processed in the plant. Packages are stacked in several docks, and each dock should be defined in a separate array. Each array must include JSON objects with data for every package in the dock. The order of the JSON objects corresponds to the order of the packages in the dock, with the package at the bottom of the dock being the first one in the array, and so on.
 
-The data should be formatted as a JSON object with one property (storage). The value of the storage property is an array of arrays, where each array represents a dock in the manufacturing plant and contains data about the stored packages.
+The data should be formatted as a JSON object with one key (storage). The value of the storage key is an array of arrays, where each array represents a dock in the manufacturing plant and contains data about the stored packages.
 ```json
 {"storage": [
 		[
