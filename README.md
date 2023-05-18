@@ -71,7 +71,7 @@ The data should be formatted as a JSON object with separate fields for open and 
 "offersClosed": ["offerId": id,
 		"price": int,
 		"endDate": timestamp,
-		"manufacturerId": id]]
+		"manufacturerId": id]
 }
 ```
 
