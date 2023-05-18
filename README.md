@@ -27,15 +27,34 @@ The data must be formatted as a simple JSON object:
 * Manufacturing plant occupancy
 This field must include data about all the packages that are being processed in the plant. Packages are stacked in several docks and each dock should be defined in a separated array. Each array must include JSON objects with data for every package in the dock. The order of the JSON objects correspond to the order of the package in the dock, with the package at the bottom of the dock being the first one in the array and so on.
 
-The data must be formated as a JSON object with one property (storage). The value of the storage propery is array of arrays, where each array represents a dock in the manufacturing plant and contains data about stored packages.
-{
-"storage": [[{"packageId": id,
-	  "processingEndDate": timestamp,
-	  "dispatchDuration": int (seconds)
-	}, ...
-	], ...
-   ]
+The data must be formated as a JSON object with one property (storage). The value of the storage property is an array of arrays, where each array represents a dock in the manufacturing plant and contains data about the stored packages.
+```json
+{"storage": [
+		[
+			{"packageId": id1,
+	  		"processingEndDate": timestamp1,
+	  		"dispatchDuration": int (seconds1)
+			}, 
+			{"packageId": id2,
+	  		"processingEndDate": timestamp2,
+	  		"dispatchDuration": int (seconds2)
+			},
+			...
+		], 
+		[
+			{"packageId": id3,
+	  		"processingEndDate": timestamp3,
+	  		"dispatchDuration": int (seconds3)
+			}, 
+			{"packageId": id4,
+	  		"processingEndDate": timestamp4,
+	  		"dispatchDuration": int (seconds4)
+			},
+			...
+		], ...
+   	]
 }
+```
 
 * pool; trenutni in pretekli offerji (acceptani ali da je pretekel rok offerja)
 {
