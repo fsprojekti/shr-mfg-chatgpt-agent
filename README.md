@@ -19,10 +19,11 @@ This field should include the basic data about the request (ID, price, and end d
 
 The data should be formatted as a simple JSON object:
 ```json
-{ "offerId": id,
-  "price": int,
-  "endDate": timestamp,
-  "type": string ("direct" or "pool")
+{ 
+	"offerId": id,
+  	"price": int,
+  	"endDate": timestamp,
+  	"type": string ("direct" or "pool")
 }
 ```
 * **Manufacturing plant occupancy**
@@ -33,24 +34,28 @@ The data should be formatted as a JSON object with one key (storage). The value 
 ```json
 {"storage": [
 		[
-			{"packageId": id1,
-	  		"processingEndDate": timestamp1,
-	  		"dispatchDuration": int (seconds1)
+			{
+				"packageId": 111,
+				"processingEndDate": 1684407772,
+				"dispatchDuration": 30
 			}, 
-			{"packageId": id2,
-	  		"processingEndDate": timestamp2,
-	  		"dispatchDuration": int (seconds2)
+			{
+				"packageId": 222,
+				"processingEndDate": 1684407772,
+				"dispatchDuration": 30
 			},
 			...
 		], 
 		[
-			{"packageId": id3,
-	  		"processingEndDate": timestamp3,
-	  		"dispatchDuration": int (seconds3)
+			{
+				"packageId": 333,
+				"processingEndDate": 1684407772,
+				"dispatchDuration": 30
 			}, 
-			{"packageId": id4,
-	  		"processingEndDate": timestamp4,
-	  		"dispatchDuration": int (seconds4)
+			{
+				"packageId": 444,
+				"processingEndDate": 1684407772,
+				"dispatchDuration": 30
 			},
 			...
 		], ...
@@ -65,13 +70,24 @@ This field should include the data about all the offers currently in the pool an
 The data should be formatted as a JSON object with separate fields for open and closed offers:
 
 ```json
-{"offersOpen": ["offerId": id,
-		"price": int,
-		"endDate": timestamp,], 
-"offersClosed": ["offerId": id,
-		"price": int,
-		"endDate": timestamp,
-		"manufacturerId": id]
+{
+"offersOpen": [
+			{	
+				"offerId": 1,
+				"price": 5,
+				"endDate": 1684407772
+			},
+			...
+		], 
+"offersClosed": [
+			{
+				"offerId": 2,
+				"price": 3,
+				"endDate": 16844075272,
+				"manufacturerId": 151353]
+			}
+			...
+		]
 }
 ```
 
@@ -80,7 +96,7 @@ The data should be formatted as a JSON object with separate fields for open and 
 This field should include the current state of the manufacturer's balance. **Note that ChatGPT should only be asked to assist with the decision regarding offers that can realistically be fulfilled**.
 ```json
 {
-"balance": 1
+"balance": 100
 }
 ```
 
