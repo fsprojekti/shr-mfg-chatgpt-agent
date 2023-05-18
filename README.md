@@ -65,15 +65,13 @@ This field should include the data about all the offers currently in the pool an
 The data should be formatted as a JSON object with separate fields for open and closed offers:
 
 ```json
-{
-	"offersOpen": ["offerId": id,
-					"price": int,
-					"endDate": timestamp,], 
-	"offersClosed": ["offerId": id,
-					"price": int,
-					"endDate": timestamp,
-					"manufacturerId": id]
-	]
+{"offersOpen": ["offerId": id,
+		"price": int,
+		"endDate": timestamp,], 
+"offersClosed": ["offerId": id,
+		"price": int,
+		"endDate": timestamp,
+		"manufacturerId": id]]
 }
 ```
 
