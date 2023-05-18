@@ -20,7 +20,7 @@ This field should include the basic data about the request (ID, price, and end d
 The data should be formatted as a simple JSON object:
 ```json
 { 
-	"offerId": id,
+	"offerId": 1254,
   	"price": 10,
   	"endDate": 1684407772,
   	"type": "direct or pool"
@@ -58,7 +58,8 @@ The data should be formatted as a JSON object with one key (storage). The value 
 				"dispatchDuration": 30
 			},
 			...
-		], ...
+		], 
+		...
    	]
 }
 ```
