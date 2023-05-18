@@ -21,9 +21,9 @@ The data should be formatted as a simple JSON object:
 ```json
 { 
 	"offerId": id,
-  	"price": int,
-  	"endDate": timestamp,
-  	"type": string ("direct" or "pool")
+  	"price": 10,
+  	"endDate": 1684407772,
+  	"type": "direct or pool"
 }
 ```
 * **Manufacturing plant occupancy**
@@ -84,7 +84,7 @@ The data should be formatted as a JSON object with separate fields for open and 
 				"offerId": 2,
 				"price": 3,
 				"endDate": 16844075272,
-				"manufacturerId": 151353]
+				"manufacturerId": 151353
 			}
 			...
 		]
