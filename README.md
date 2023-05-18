@@ -4,31 +4,37 @@
 
 ChatGPT will be utilized in two scenarios:
 * the plant receives an offer from the package and need to decide what to do, the options are:
- * accept the offer
- * reject the offer
- * redirect the offer to the pool with an adapted price and its fee
+	* accept the offer
+	* reject the offer
+	* redirect the offer to the pool with an adapted price and its fee
 * the plant will periodically check the pool for new offers and will need to decide:
 	* accept the offer or not
 
-	
-request na ChatGPT:
-* trenuten offer: ali direkten ali iz pool-a (glede na zgornja 2 eventa)
+## ChatGPT request data and format
 
+The request to the ChatGPT tool should include:
+* The offer currently processed
+This field must include the basic data about the request (id, price and endDate) as well as the type of the offer: whether it was received directly from the packaget or it was taken from the pool.
+
+The data must be formatted as a simple JSON object:
+```json
 { "offerId": id,
   "price": int,
   "endDate": timestamp,
   "type": direct / pool
 }
+```
+* Manufacturing plant occupancy
+This field must include data about all the packages that are being processed in the plant. Packages are stacked in several docks and each dock should be defined in a separated array. Each array must include JSON objects with data for every package in the dock. The order of the JSON objects correspond to the order of the package in the dock, with the package at the bottom of the dock being the first one in the array and so on.
 
-* zasedenost tovarne; trenutno stanje paketov, čas zaključka obdelave, čas dispatcha (od konca obdelave do nalaganja na prevoz)
-
+The data must be formated as a JSON object with one property (storage). The value of the storage propery is array of arrays, where each array represents a dock in the manufacturing plant and contains data about stored packages.
 {
-	"storage": [[{"packageId": id,
-				  "processingEndDate": timestamp,
-				  "dispatchDuration": int (seconds)
-				}, ...
-				], ...
-			   ]
+"storage": [[{"packageId": id,
+	  "processingEndDate": timestamp,
+	  "dispatchDuration": int (seconds)
+	}, ...
+	], ...
+   ]
 }
 
 * pool; trenutni in pretekli offerji (acceptani ali da je pretekel rok offerja)
