@@ -22,7 +22,7 @@ The data should be formatted as a simple JSON object:
 { "offerId": id,
   "price": int,
   "endDate": timestamp,
-  "type": direct / pool
+  "type": string ("direct" or "pool")
 }
 ```
 * **Manufacturing plant occupancy**
