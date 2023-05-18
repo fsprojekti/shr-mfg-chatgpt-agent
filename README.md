@@ -1,13 +1,15 @@
-# shr-mfg-chatgpt-agent
+# Shared Manufacturing Platform - ChatGPT Agent
 
+## Manufacturing plant offers management
 
-manufacturing:
+ChatGPT will be utilized in two scenarios:
+* the plant receives an offer from the package and need to decide what to do, the options are:
+ * accept the offer
+ * reject the offer
+ * redirect the offer to the pool with an adapted price and its fee
+* the plant will periodically check the pool for new offers and will need to decide:
+	* accept the offer or not
 
-* dobi offer od paketa (sendOffer)
-	odločitev: accept, reject, to pool? --> ChatGPT
-* preverjanje pool-a za nove ponudbe
-	odločitev: accept? ChatGPT
-	
 	
 request na ChatGPT:
 * trenuten offer: ali direkten ali iz pool-a (glede na zgornja 2 eventa)
